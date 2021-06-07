@@ -1,0 +1,22 @@
+{
+  "name": "node-course-final",
+  "version": "1.0.0",
+  "description": "Final review of Jonas' Node course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albert-anthony6/node-course-final.git"
+  },
+  "author": "Albert Valdes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albert-anthony6/node-course-final/issues"
+  },
+  "homepage": "https://github.com/albert-anthony6/node-course-final#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
