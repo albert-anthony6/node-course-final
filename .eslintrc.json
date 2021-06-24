@@ -13,6 +13,7 @@
     "no-console": "warn",
     "consistent-return": "off",
     "func-names": "off",
+    "prefer-arrow-callback": "off",
     "object-shorthand": "off",
     "no-process-exit": "off",
     "no-param-reassign": "off",
