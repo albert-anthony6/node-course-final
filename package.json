@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "serve": "nodemon server.js",
-    "serve:prod": "NODE_ENV=production nodemon server.js"
+    "serve:prod": "NODE_ENV=production nodemon server.js",
+    "debug": "ndb server.js"
   },
   "repository": {
     "type": "git",
