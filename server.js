@@ -14,6 +14,15 @@ mongoose
   .then(() => console.log('Connection to DB successful.'));
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`app running on port ${port}...`);
+});
+
+// Global handler for unhandled promise rejections
+process.on('unhandledRejection', (err) => {
+  console.log(err.name, err.message);
+  console.log('UNHANDLED REJECTION! Shutting down...');
+  server.close(() => {
+    process.exit(1);
+  });
 });
