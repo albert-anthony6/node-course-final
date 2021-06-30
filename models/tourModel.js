@@ -6,27 +6,27 @@ const tourSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'Tour must have a name.'],
+      required: [true, 'Tour must have a name'],
       trim: true,
       unique: true,
-      maxLength: [40, 'A tour name must have less or equal than 40 chars.'],
-      minLength: [10, 'A tour name must have more or equal than 10 chars.'],
+      maxLength: [40, 'A tour name must have less or equal than 40 chars'],
+      minLength: [10, 'A tour name must have more or equal than 10 chars'],
     },
     slug: String,
     duration: {
       type: Number,
-      required: [true, 'A tour must have a duration.'],
+      required: [true, 'A tour must have a duration'],
     },
     maxGroupSize: {
       type: Number,
-      required: [true, 'A tour must have a group size.'],
+      required: [true, 'A tour must have a group size'],
     },
     difficulty: {
       type: String,
-      required: [true, 'A tour must have a difficulty.'],
+      required: [true, 'A tour must have a difficulty'],
       enum: {
         values: ['easy', 'medium', 'difficult'],
-        message: 'Difficulty is either: easy, medium, or difficult.',
+        message: 'Difficulty is either: easy, medium, or difficult',
       },
     },
     ratingsAverage: {
@@ -41,7 +41,7 @@ const tourSchema = new mongoose.Schema(
     },
     price: {
       type: Number,
-      required: [true, 'Tour must have a price.'],
+      required: [true, 'Tour must have a price'],
     },
     priceDiscount: {
       type: Number,
@@ -50,13 +50,13 @@ const tourSchema = new mongoose.Schema(
           // this only points to current doc on NEW document creation
           return val < this.price;
         },
-        message: 'Discount price should be below the regular price.',
+        message: 'Discount price should be below the regular price',
       },
     },
     summary: {
       type: String,
       trim: true,
-      required: [true, 'A tour must have a summary.'],
+      required: [true, 'A tour must have a summary'],
     },
     description: {
       type: String,
@@ -64,7 +64,7 @@ const tourSchema = new mongoose.Schema(
     },
     imageCover: {
       type: String,
-      required: [true, 'A tour must have a cover image.'],
+      required: [true, 'A tour must have a cover image'],
     },
     images: [String],
     createdAt: {
