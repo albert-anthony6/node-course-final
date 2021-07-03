@@ -5,7 +5,9 @@ const handleCastErrorDB = (err) => {
   return new AppError(message, 400);
 };
 const handleDuplicateFieldsDB = (err) => {
-  const message = `Duplicate field value: ${err.keyValue.name}. Please use another value.`;
+  const message = `Duplicate field value: ${
+    err.keyValue.name || err.keyValue.email
+  }. Please use another value.`;
   return new AppError(message, 400);
 };
 const handleValidationErrorDB = (err) => {
@@ -45,7 +47,7 @@ module.exports = (err, req, res, next) => {
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(err, res);
   } else if (process.env.NODE_ENV === 'production') {
-    let error = { ...err };
+    let error = { ...err, message: err.message };
     // Handling invalid DB IDs
     if (err.name === 'CastError') error = handleCastErrorDB(error);
     // Handling duplicate DB fields
